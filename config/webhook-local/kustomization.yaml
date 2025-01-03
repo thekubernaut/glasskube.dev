@@ -1,8 +1,0 @@
-namespace: glasskube-system
-namePrefix: glasskube-
-resources:
-  - namespace.yaml
-  - ../webhook
-patches:
-  - path: webhook_manifests_patch.yaml
-  - path: webhook_service_patch.yaml

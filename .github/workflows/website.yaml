@@ -4,18 +4,9 @@ on:
   push:
     branches:
       - main
-    paths:
-      - website/**
   pull_request:
     branches:
       - main
-    paths:
-      - website/**
-  merge_group:
-    types:
-      - checks_requested
-    paths:
-      - website/**
 
 jobs:
   build:
