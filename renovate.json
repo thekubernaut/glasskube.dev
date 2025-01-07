@@ -54,7 +54,7 @@
         "src/partials/_upgrade.mdx"
       ],
       "matchStrings": [
-        "releases.dl.glasskube.dev/glasskube_(?<currentValue>v[0-9.]*)_"
+        "glasskube_(?<currentValue>v[0-9.]*)_"
       ],
       "datasourceTemplate": "github-releases",
       "versioningTemplate": "docker",
