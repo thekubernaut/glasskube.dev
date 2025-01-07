@@ -134,6 +134,7 @@ const config: Config = {
       items: [
         {label: 'Software Distribution', to: '/software-distribution/'},
         {label: 'Blog', to: '/blog/'},
+        {label: 'White Paper', to: '/white-paper/building-blocks/'},
         {label: 'Pricing', to: '/pricing'},
         {type: 'custom-wrapper', position: 'right'},
         // {label: 'Login', to: 'https://glasskube.cloud/', position: 'right'},
