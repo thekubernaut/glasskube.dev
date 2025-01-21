@@ -66,6 +66,19 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'cloud-docs',
+        path: 'docs/cloud',
+        routeBasePath: 'products/cloud/docs',
+        editCurrentVersion: true,
+        sidebarPath: 'docs/cloud/sidebar.ts',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        editUrl: 'https://github.com/glasskube/glasskube.dev/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
         id: 'package-manager-guides',
         path: 'guides/package-manager',
         routeBasePath: 'products/package-manager/guides',
