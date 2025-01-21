@@ -51,15 +51,29 @@ const config: Config = {
       } satisfies IdealImageOptions,
     ],
     [
-      'content-docs',
+      '@docusaurus/plugin-content-docs',
       {
-        id: 'guides',
-        path: 'guides',
-        routeBasePath: 'guides',
+        id: 'package-manager-docs',
+        path: 'docs/package-manager',
+        routeBasePath: 'products/package-manager/docs',
         editCurrentVersion: true,
-        sidebarPath: './sidebar-guides.ts',
+        sidebarPath: 'docs/package-manager/sidebar.ts',
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        editUrl: 'https://github.com/glasskube/glasskube.dev/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'package-manager-guides',
+        path: 'guides/package-manager',
+        routeBasePath: 'products/package-manager/guides',
+        editCurrentVersion: true,
+        sidebarPath: 'guides/package-manager/sidebar.ts',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        editUrl: 'https://github.com/glasskube/glasskube.dev/tree/main/',
       },
     ],
     [
@@ -68,8 +82,22 @@ const config: Config = {
         id: 'glossary',
         path: 'glossary',
         routeBasePath: 'glossary',
-        sidebarPath: './sidebar-glossary.ts',
+        sidebarPath: 'glossary/sidebar.ts',
         editUrl: 'https://github.com/glasskube/glasskube.dev/tree/main/',
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        createRedirects(existingPath) {
+          if (existingPath.includes('/products/package-manager')) {
+            return [
+              existingPath.replace('/products/package-manager/docs', '/docs'),
+              existingPath.replace('/products/package-manager/guides', '/guides'),
+            ];
+          }
+          return undefined; // Return a falsy value: no redirect created
+        },
       },
     ],
     [
@@ -86,10 +114,7 @@ const config: Config = {
     [
       '@docusaurus/preset-classic',
       {
-        docs: {
-          sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/glasskube/glasskube.dev/tree/main/',
-        },
+        docs: false,
         blog: false,
         theme: {
           customCss: ['./src/css/custom.css'],
@@ -97,7 +122,7 @@ const config: Config = {
         sitemap: {
           changefreq: EnumChangefreq.DAILY,
           priority: 1,
-          ignorePatterns: ['/telemetry/', '/blog/authors/', '/blog/archive/', '/blog/tags/**'],
+          ignorePatterns: ['/telemetry/', '/blog/authors/', '/blog/archive/', '/blog/tags/**', '**/guides/tags/**'],
           filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
@@ -155,8 +180,8 @@ const config: Config = {
           items: [
             {label: 'Blog', to: '/blog/'},
             {label: 'Glossary', to: '/glossary/'},
-            {label: 'Package Manager Docs', to: '/docs/'},
-            {label: 'Package Manager Guides', to: '/guides/'},
+            {label: 'Package Manager Docs', to: '/products/package-manager/docs/'},
+            {label: 'Package Manager Guides', to: '/products/package-manager/guides/'},
           ],
         },
         {
