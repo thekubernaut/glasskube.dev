@@ -39,10 +39,10 @@ function Pricing() {
                   Software Distribution
                 </h4>
                 <ul>
-                  <li>Support for docker-compose based application</li>
-                  <li>Support for Helm based applications</li>
-                  <li>Customer configurations & secrets</li>
-                  <li>Release Channels</li>
+                  <li>Support for docker-compose</li>
+                  <li>Support for Helm</li>
+                  <li>Configurations & secrets</li>
+                  <li>API Integrations & SDK</li>
                 </ul>
                 <h4 className={styles.pricingSectionHeader}>
                   Monitoring & Customer Support
@@ -80,7 +80,7 @@ function Pricing() {
                 </h4>
                 All Free features and:
                 <ul className={styles.pricingItemList}>
-                  <li>API Integration</li>
+                  <li>Release Channels</li>
                   <li>License dependent features</li>
                 </ul>
                 <h4 className={styles.pricingSectionHeader}>
