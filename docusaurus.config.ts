@@ -66,19 +66,6 @@ const config: Config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'cloud-docs',
-        path: 'docs/cloud',
-        routeBasePath: 'products/cloud/docs',
-        editCurrentVersion: true,
-        sidebarPath: 'docs/cloud/sidebar.ts',
-        showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
-        editUrl: 'https://github.com/glasskube/glasskube.dev/tree/main/',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
         id: 'package-manager-guides',
         path: 'guides/package-manager',
         routeBasePath: 'products/package-manager/guides',
@@ -157,7 +144,8 @@ const config: Config = {
     },
     announcementBar: {
       id: 'announcementBar-1', // Increment on change
-      content: `🎉 We just released v0.26.1 of our Open Source Kubernetes Package Manager on <a href="https://github.com/glasskube/glasskube/" target="_blank">⭐ GitHub ⭐</a>.`,
+      // content: `🎉 We just released v0.26.1 of our Open Source Kubernetes Package Manager on <a href="https://github.com/glasskube/glasskube/" target="_blank">⭐ GitHub ⭐</a>.`,
+      content: `🎉 We just released <a href="https://distr.sh/" target="_blank">Distr</a>  on <a href="https://github.com/glasskube/distr/" target="_blank">⭐ GitHub ⭐</a>.`,
       isCloseable: false,
     },
     image:
@@ -172,9 +160,9 @@ const config: Config = {
         {label: 'Software Distribution', to: '/software-distribution/'},
         {label: 'Blog', to: '/blog/'},
         {label: 'White Paper', to: '/white-paper/building-blocks/'},
-        {label: 'Pricing', to: '/pricing'},
+        {label: 'Distr Pricing', to: '/pricing'},
         {type: 'custom-wrapper', position: 'right'},
-        // {label: 'Login', to: 'https://glasskube.cloud/', position: 'right'},
+        {label: 'Distr Login', to: 'https://app.distr.sh/', position: 'right'},
       ],
     },
     footer: {
@@ -183,7 +171,7 @@ const config: Config = {
         {
           title: 'Products',
           items: [
-            {label: 'Glasskube Cloud', to: '/'},
+            {label: 'Distr', to: 'https://distr.sh/'},
             {label: 'Package Manager', to: '/products/package-manager/'},
             {label: 'Private Package Repository', to: '/products/hub/'},
           ],

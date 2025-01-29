@@ -21,11 +21,11 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Integrate with Glasskube Cloud',
+    title: 'Integrate with Distr',
     icon: faCloud,
     description: (
       <>
-        Integrate your private package repositories with Glasskube Cloud, to
+        Integrate your private package repositories with Distr, to
         distribute your software to Kubernetes clusters.
       </>
     ),

@@ -148,7 +148,7 @@ function Pricing() {
                   <li>Customer support SLAs</li>
                 </ul>
                 <h4 className={styles.pricingSectionHeader}>On-premises</h4>
-                You can also self host Glasskube Cloud on your own
+                You can also self host Distr on your own
                 infrastructure.
               </div>
               <div className="card__footer">

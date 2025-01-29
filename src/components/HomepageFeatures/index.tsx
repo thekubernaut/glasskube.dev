@@ -32,7 +32,7 @@ const FeatureList: FeatureItem[] = [
     icon: faArrowTrendUp,
     description: (
       <>
-        Glasskube Cloud notifies your customers about new updates and empowers
+        Distr notifies your customers about new updates and empowers
         them to update whenever they are ready.
       </>
     ),
@@ -70,7 +70,7 @@ export default function HomepageFeatures(): JSX.Element {
         <div className="row">
           <div className="col text--center margin-top--xl">
             <Heading as="h2">
-              The Glasskube Cloud Software Distribution Platform is the central
+              The Distr Software Distribution Platform is the central
               place to manage all your on-prem, vpc and air-gapped customers.
             </Heading>
           </div>
