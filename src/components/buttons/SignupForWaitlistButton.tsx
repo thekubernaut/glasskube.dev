@@ -23,7 +23,7 @@ const SignupForWaitlistButton: FC<SignupForWaitlistButtonProps> = ({
 }) => (
   <Link
     className={`glasskube-telemetry-waitlist button button--outline ${additionalClassNames}`}
-    to={`https://glasskube.cloud${posthogId()}`}>
+    to={`https://signup.distr.sh${posthogId()}`}>
     Get started free
   </Link>
 );

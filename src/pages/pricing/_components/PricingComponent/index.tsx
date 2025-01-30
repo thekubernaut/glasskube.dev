@@ -55,7 +55,7 @@ function Pricing() {
               <div className="card__footer">
                 <Link
                   className="button button--secondary button--block button--lg"
-                  to="https://glasskube.cloud/">
+                  to="https://signup.distr.sh/">
                   Free forever
                 </Link>
               </div>
