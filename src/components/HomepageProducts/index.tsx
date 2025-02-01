@@ -24,7 +24,7 @@ const ScreenshotList: ScreenshotItem[] = [
         <Link
           className="button button--secondary margin-top--md"
           to="https://signup.distr.sh/">
-          Get started free
+          Get started for free
         </Link>
       </>
     ),
@@ -44,7 +44,7 @@ const ScreenshotList: ScreenshotItem[] = [
         <Link
           className="button button--secondary margin-top--md"
           to="https://signup.distr.sh/">
-          Get started free
+          Get started for free
         </Link>
       </>
     ),
