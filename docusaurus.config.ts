@@ -178,24 +178,20 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Products',
+          title: 'Distr',
           items: [
-            {label: 'Distr', to: 'https://distr.sh/'},
-            {label: 'Package Manager', to: '/products/package-manager/'},
-            {label: 'Private Package Repository', to: '/products/hub/'},
+            {label: 'GitHub', to: 'https://github.com/glasskube/distr/'},
+            {label: 'Docs', to: 'https://distr.sh/docs/getting-started/about/'},
+            {label: 'Signup', href: 'https://signup.distr.sh/'},
           ],
         },
         {
-          title: 'Resources',
+          title: 'Package Manager',
           items: [
-            {label: 'Blog', to: '/blog/'},
-            {label: 'Glossary', to: '/glossary/'},
+            {label: 'GitHub', to: 'https://github.com/glasskube/distr/'},
+            {label: 'Docs', to: '/products/package-manager/docs/'},
             {
-              label: 'Package Manager Docs',
-              to: '/products/package-manager/docs/',
-            },
-            {
-              label: 'Package Manager Guides',
+              label: 'Guides',
               to: '/products/package-manager/guides/',
             },
           ],
@@ -203,7 +199,6 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {label: 'GitHub', href: 'https://github.com/glasskube/glasskube'},
             {label: 'Discord', href: 'https://discord.gg/SxH6KUCGH7'},
             {
               label: 'LinkedIn',
@@ -216,12 +211,12 @@ const config: Config = {
           title: 'More',
           items: [
             {label: 'Blog', to: '/blog/'},
+            {label: 'Glossary', to: '/glossary/'},
             {label: 'Contact us', to: '/contact/'},
             {
               label: 'Schedule a meeting',
               href: 'https://cal.glasskube.com/team/founder/30min',
             },
-            {label: 'Get started for free', href: 'https://signup.distr.sh/'},
           ],
         },
       ],
