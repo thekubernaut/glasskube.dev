@@ -93,7 +93,10 @@ const config: Config = {
           if (existingPath.includes('/products/package-manager')) {
             return [
               existingPath.replace('/products/package-manager/docs', '/docs'),
-              existingPath.replace('/products/package-manager/guides', '/guides'),
+              existingPath.replace(
+                '/products/package-manager/guides',
+                '/guides',
+              ),
             ];
           }
           return undefined; // Return a falsy value: no redirect created
@@ -122,7 +125,13 @@ const config: Config = {
         sitemap: {
           changefreq: EnumChangefreq.DAILY,
           priority: 1,
-          ignorePatterns: ['/telemetry/', '/blog/authors/', '/blog/archive/', '/blog/tags/**', '**/guides/tags/**'],
+          ignorePatterns: [
+            '/telemetry/',
+            '/blog/authors/',
+            '/blog/archive/',
+            '/blog/tags/**',
+            '**/guides/tags/**',
+          ],
           filename: 'sitemap.xml',
         },
       } satisfies Preset.Options,
@@ -181,8 +190,14 @@ const config: Config = {
           items: [
             {label: 'Blog', to: '/blog/'},
             {label: 'Glossary', to: '/glossary/'},
-            {label: 'Package Manager Docs', to: '/products/package-manager/docs/'},
-            {label: 'Package Manager Guides', to: '/products/package-manager/guides/'},
+            {
+              label: 'Package Manager Docs',
+              to: '/products/package-manager/docs/',
+            },
+            {
+              label: 'Package Manager Guides',
+              to: '/products/package-manager/guides/',
+            },
           ],
         },
         {
@@ -190,7 +205,10 @@ const config: Config = {
           items: [
             {label: 'GitHub', href: 'https://github.com/glasskube/glasskube'},
             {label: 'Discord', href: 'https://discord.gg/SxH6KUCGH7'},
-            {label: 'LinkedIn', href: 'https://www.linkedin.com/company/glasskube/'},
+            {
+              label: 'LinkedIn',
+              href: 'https://www.linkedin.com/company/glasskube/',
+            },
             {label: 'Twitter / X', href: 'https://x.com/glasskube'},
           ],
         },
@@ -199,7 +217,10 @@ const config: Config = {
           items: [
             {label: 'Blog', to: '/blog/'},
             {label: 'Contact us', to: '/contact/'},
-            {label: 'Schedule a meeting', href: 'https://cal.glasskube.com/team/founder/30min'},
+            {
+              label: 'Schedule a meeting',
+              href: 'https://cal.glasskube.com/team/founder/30min',
+            },
             {label: 'Get started for free', href: 'https://signup.distr.sh/'},
           ],
         },
