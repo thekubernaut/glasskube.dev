@@ -160,9 +160,9 @@ const config: Config = {
         {label: 'Software Distribution', to: '/software-distribution/'},
         {label: 'Blog', to: '/blog/'},
         {label: 'White Paper', to: '/white-paper/building-blocks/'},
-        {label: 'Distr Pricing', to: '/pricing'},
+        {label: 'Pricing', to: '/pricing'},
         {type: 'custom-wrapper', position: 'right'},
-        {label: 'Distr Login', to: 'https://app.distr.sh/', position: 'right'},
+        {label: 'Login', to: 'https://app.distr.sh/', position: 'right'},
       ],
     },
     footer: {
