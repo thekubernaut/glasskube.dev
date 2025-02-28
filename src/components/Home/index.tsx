@@ -84,17 +84,26 @@ function HomepageVideo() {
         <div className="row">
           <div className="col col--8 col--offset-2 margin-vert--lg">
             <Heading as={'h2'} className={styles.colorWhite}>
-              Demo video of our Open Source Package Manager
+              Distr Demo Video
             </Heading>
-            <iframe
-              width="100%"
-              height="460"
-              src="https://www.youtube-nocookie.com/embed/aIeTHGWsG2c?si=KUcqvY4coU89GmdK"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen></iframe>
+            <div
+              style={{
+                position: 'relative',
+                height: '0',
+                paddingBottom: '56.25%',
+              }}>
+              <iframe
+                src="https://www.loom.com/embed/847a5f2161944150b8685536d73c7b70?sid=71b060ee-21b3-4c1f-8bbb-25c01422a45c"
+                frameBorder="0"
+                allowFullScreen
+                style={{
+                  position: 'absolute',
+                  width: '100%',
+                  height: '100%',
+                  top: '0',
+                  left: '0',
+                }}></iframe>
+            </div>
           </div>
         </div>
       </div>
