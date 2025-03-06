@@ -1,6 +1,6 @@
 ---
 slug: kubernetes-zero-downtime-deployments-aws-eks
-title: Zero Downtime Deployments on Kubernetes on AWS with EKS
+title: Zero-Downtime Kubernetes Deployments on AWS with EKS
 description: Zero-downtime deployments on Kubernetes on AWS EKS utilizing Pod Readiness Gates, graceful application shutdown and termination delays with code examples in Go
 authors: [kosmoz]
 tags: [AWS, Kubernetes, DevOps, EKS, Pod Readiness Gates, Golang]
@@ -40,7 +40,7 @@ An `Endpoint` is created by Kubernetes for each service, and it tracks which IP 
 The endpoint controller uses several signals to determine whether pod is eligible to be part of an endpoint, including container probes and whether the pod is marked as "terminating".
 
 
-![siege report with errors](/img/blog/2025-03-03-aws-eks-0-downtime/aws-loadbalancer.png)
+![aws load balancer diagram](/img/blog/2025-03-03-aws-eks-0-downtime/aws-loadbalancer.png)
 
 From the above, it follows that the AWS Load Balancer Controller simply adds missing IP addresses to the target group and removes superfluous ones, but unfortunately, both of those actions take some time which can lead to downtime in subtle ways.
 After an IP address is added to the target group, the AWS system starts performing its own health check, which is completely unrelated to the Pod's container probes.
@@ -55,7 +55,7 @@ This is exactly what had happened when I took the screenshot in the introduction
 
 Fortunately, both of those issues can be worked around, but the [documentation](https://docs.aws.amazon.com/eks/latest/best-practices/load-balancing.html#_availability_and_pod_lifecycle) is a little nebulous about how everything works in detail.
 
-## Testing Zero downtime deployments
+## Testing Zero-downtime deployments
 
 In what follows, I will describe several solutions to the issues outlined above, all of which are necessary to solve one part of the general problem.
 If you follow along, implementing these solutions for your own application, I suggest testing your changes after each iteration using [`siege`](https://github.com/JoeDog/siege).
@@ -63,7 +63,7 @@ Siege is an HTTP load testing utility that is perfect for our use-case.
 It lets you define how many requests it sends to your server, shows you the status code of each request and prints a nice summary at the end.
 It can be invoked like `siege -c 2 https://your-application.example.com`, where `-c 2` tells it to perform 2 requests in parallel.
 
-## How we archived Zero downtime deployments in three parts
+## How we archived Zero-downtime deployments in three parts
 
 ### Part 1: Using Pod Readiness Gate on AWS EKS
 
@@ -263,7 +263,7 @@ We have achieved 100% downtime-free deployments!
 
 ## Conclusion
 
-In this blog post we learned how to deploy on AWS EKS with zero downtime by enabling Pod Readiness Gates and implementing graceful shutdown as well as a termination delay.
+In this blog post we learned how to deploy on AWS EKS with zero-downtime by enabling Pod Readiness Gates and implementing graceful shutdown as well as a termination delay.
 But in addition to this, I hope that, like me, you were able to learn something about how external load balancers work in Kubernetes.
 To me, it's always interesting to take a look below the surface of a complex system, this time learning about `Endpoints`, `EndpointSlices`, `TargetGroupBindings` and so much more, and I'm sure this knowledge will be very useful in the future.
 If you want to see a real-world implementation of these features, check out Distr ([`github.com/glasskube/distr`](https://github.com/glasskube/distr)), our Open Source Software Distribution Platform!
