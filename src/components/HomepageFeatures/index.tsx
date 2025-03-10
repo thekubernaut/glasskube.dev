@@ -4,11 +4,8 @@ import styles from './styles.module.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {IconDefinition} from '@fortawesome/free-regular-svg-icons';
 import React from 'react';
-import {
-  faArrowTrendUp,
-  faClock,
-  faLightbulb,
-} from '@fortawesome/free-solid-svg-icons';
+import {faKey, faLightbulb} from '@fortawesome/free-solid-svg-icons';
+import {faDocker} from '@fortawesome/free-brands-svg-icons';
 
 type FeatureItem = {
   title: string;
@@ -18,32 +15,32 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Reduce onboarding time',
-    icon: faClock,
+    title: 'Container Registry',
+    icon: faDocker,
     description: (
       <>
-        Your customers receive a guided installation experience, even for
-        diverse customer environments.
+        OCI compliant container registry with granular access control, security
+        scanning and detailed analytics.
       </>
     ),
   },
   {
-    title: 'Increase Update velocity',
-    icon: faArrowTrendUp,
+    title: 'License Management',
+    icon: faKey,
     description: (
       <>
-        Distr notifies your customers about new updates and empowers them to
-        update whenever they are ready.
+        Restrict access based on custom software licenses with expiration dates,
+        custom entitlements and usage.
       </>
     ),
   },
   {
-    title: 'Simplify Troubleshooting',
+    title: 'Deployment Agents',
     icon: faLightbulb,
     description: (
       <>
-        Receive metrics, heart beat information and let your customers share
-        additional support insights if needed.
+        Optional Docker Compose and Helm agents manage deployments, collect logs
+        and metrics and allow remote troubleshooting.
       </>
     ),
   },
