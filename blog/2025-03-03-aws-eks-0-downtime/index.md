@@ -63,7 +63,7 @@ Siege is an HTTP load testing utility that is perfect for our use-case.
 It lets you define how many requests it sends to your server, shows you the status code of each request and prints a nice summary at the end.
 It can be invoked like `siege -c 2 https://your-application.example.com`, where `-c 2` tells it to perform 2 requests in parallel.
 
-## How we archived Zero-downtime deployments in three parts
+## How we achieved Zero-downtime deployments in three parts
 
 ### Part 1: Using Pod Readiness Gate on AWS EKS
 
