@@ -9,7 +9,7 @@ function Pricing() {
   const [currency, setCurrency] = useState('$'); // '$' or '€'
 
   // Base prices per user
-  const eurProPriceMonthly = 58.8;
+  const eurProPriceMonthly = 59;
   const eurProPriceYearly = 49;
   const usdTopUp = 5;
 
