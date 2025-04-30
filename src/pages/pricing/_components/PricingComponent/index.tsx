@@ -9,16 +9,19 @@ function Pricing() {
   const [currency, setCurrency] = useState('$'); // '$' or '€'
 
   // Base prices per user
-  const proPriceMonthly = 58.8;
-  const proPriceYearly = 49;
+  const eurProPriceMonthly = 58.8;
+  const eurProPriceYearly = 49;
+  const usdTopUp = 5;
 
   // Calculate total prices based on user count and billing cycle
   const calculatePrice = basePrice => {
-    return basePrice * userCount;
+    const currencyAwareBasePrice =
+      currency === '€' ? basePrice : basePrice + usdTopUp;
+    return currencyAwareBasePrice * userCount;
   };
 
-  const proMonthlyTotal = calculatePrice(proPriceMonthly);
-  const proYearlyTotal = calculatePrice(proPriceYearly) * 12; // Yearly price is fixed at $49 per user per month
+  const proMonthlyTotal = calculatePrice(eurProPriceMonthly);
+  const proYearlyTotal = calculatePrice(eurProPriceYearly) * 12; // Yearly price is fixed at $49 per user per month
 
   const decrementUserCount = () => {
     if (userCount > 1) {

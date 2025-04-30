@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-function PricingComparisionTable() {
+function PricingComparisonTable() {
   return (
     <section>
       <div className="container">
@@ -268,4 +268,4 @@ function PricingComparisionTable() {
   );
 }
 
-export default React.memo(PricingComparisionTable);
+export default React.memo(PricingComparisonTable);
