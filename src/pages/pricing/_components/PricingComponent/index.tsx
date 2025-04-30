@@ -194,7 +194,6 @@ function Pricing() {
               <div className="card__body">
                 <p className={styles.includedFeatures}>All of Free plus</p>
                 <ul className={styles.featureList}>
-                  <li>Unlimited Users</li>
                   <li>Open Feature compatible Advanced License Management</li>
                   <li>Usage based pricing and metering</li>
                   <li>Registry (up to 1 TB)</li>
