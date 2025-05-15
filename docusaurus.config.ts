@@ -192,7 +192,10 @@ const config: Config = {
           title: 'Distr',
           items: [
             {label: 'GitHub', to: 'https://github.com/glasskube/distr/'},
-            {label: 'Docs', to: 'https://distr.sh/docs/getting-started/what-is-distr/'},
+            {
+              label: 'Docs',
+              to: 'https://distr.sh/docs/getting-started/what-is-distr/',
+            },
             {label: 'Signup', href: 'https://signup.distr.sh/'},
           ],
         },
