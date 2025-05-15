@@ -92,17 +92,21 @@ function HomepageVideo() {
                 height: '0',
                 paddingBottom: '56.25%',
               }}>
-              <iframe
-                src="https://www.loom.com/embed/847a5f2161944150b8685536d73c7b70?sid=71b060ee-21b3-4c1f-8bbb-25c01422a45c"
-                frameBorder="0"
-                allowFullScreen
+              <div
                 style={{
-                  position: 'absolute',
-                  width: '100%',
-                  height: '100%',
-                  top: '0',
-                  left: '0',
-                }}></iframe>
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}>
+                <iframe
+                  width="100%"
+                  height="460"
+                  src="https://www.youtube-nocookie.com/embed/FkSWkudlHJw"
+                  title="YouTube video player"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen></iframe>
+              </div>
             </div>
           </div>
         </div>
