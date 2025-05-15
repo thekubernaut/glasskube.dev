@@ -47,13 +47,15 @@ graph LR
     E -->|Used by| H[Vulnerability Management]
 ```
 
-<div style={{textAlign: "center"}}><em>Fig 1: The CVE assignment and documentation process</em></div>
+<div style={{textAlign: 'center'}}>
+  <em>Fig 1: The CVE assignment and documentation process</em>
+</div>
 
 This diagram illustrates how vulnerabilities flow from discovery to standardized identification through the CVE system, enabling consistent tracking and remediation across the security ecosystem.
 
 ## Important Considerations About CVEs
 
-It's crucial to understand that a CVE assignment doesn't always indicate a fully understood or fixed vulnerability. CVEs may be issued before patches exist or complete fixes are developed, with technical details varying significantly between entries, some comprehensive while others (particularly during embargo periods) remain limited. 
+It's crucial to understand that a CVE assignment doesn't always indicate a fully understood or fixed vulnerability. CVEs may be issued before patches exist or complete fixes are developed, with technical details varying significantly between entries, some comprehensive while others (particularly during embargo periods) remain limited.
 
 The mere existence of a CVE doesn't guarantee the vulnerability has been confirmed in all reported contexts, and the timing between discovery, assignment, and public disclosure can vary substantially based on severity and responsible disclosure practices. Security professionals have to carefully read CVE details and associated references rather than simply checking if a CVE exists for a particular issue.
 
@@ -83,21 +85,23 @@ graph LR
     A[CVSS Score Factors] --> B[Base Metrics]
     A --> C[Temporal Metrics]
     A --> D[Environmental Metrics]
-    
+
     B --> E[Exploitability]
     B --> F[Impact]
-    
+
     E --> G[Attack Vector]
     E --> H[Attack Complexity]
     E --> I[Privileges Required]
     E --> J[User Interaction]
-    
+
     F --> K[Confidentiality]
     F --> L[Integrity]
     F --> M[Availability]
 ```
 
-<div style={{textAlign: "center"}}><em>Fig 2: Components of the CVSS scoring system</em></div>
+<div style={{textAlign: 'center'}}>
+  <em>Fig 2: Components of the CVSS scoring system</em>
+</div>
 
 This diagram shows the components that contribute to a CVSS score, which helps security teams prioritize vulnerability remediation based on risk.
 
@@ -111,6 +115,7 @@ In cybersecurity, a vulnerability is a weakness or flaw in a system or applicati
 - **Implementation weaknesses**: Proper designs implemented incorrectly
 
 CVEs specifically document vulnerabilities that:
+
 - Have security implications
 - Affect specific software, firmware, or hardware
 - Can be fixed or mitigated
@@ -175,6 +180,7 @@ Common Vulnerabilities and Exposures (CVE) and Common Weakness Enumeration (CWE)
 - **CWE**: Categorizes types of weaknesses (e.g., CWE-79 for Cross-Site Scripting)
 
 In practical terms:
+
 - A CWE describes a class of vulnerability
 - A CVE identifies a specific instance of a vulnerability in a particular product
 - Many CVEs may be classified under the same CWE
@@ -202,7 +208,9 @@ graph LR
     F --> A
 ```
 
-<div style={{textAlign: "center"}}><em>Fig 3: The vulnerability management lifecycle</em></div>
+<div style={{textAlign: 'center'}}>
+  <em>Fig 3: The vulnerability management lifecycle</em>
+</div>
 
 This cycle is continuous, as new vulnerabilities are constantly being discovered and added to the CVE list.
 
@@ -249,6 +257,7 @@ These tools help organizations monitor, track, and remediate vulnerabilities doc
 While CVEs provide tremendous value to the security community, they have several important limitations:
 
 - **Coverage Gaps**: Many vulnerabilities never receive a CVE identifier, especially:
+
   - Issues in less popular or open source software without dedicated security teams
   - Vulnerabilities discovered and fixed internally before public disclosure
   - Configuration weaknesses (which may be covered by the NIST National Vulnerability Database but not assigned CVEs)

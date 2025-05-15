@@ -1,9 +1,9 @@
 ---
 slug: container-image-registry-comparison
-title: "Choosing the Right Container Registry"
-description: "OCI container image registry comparison: Comparing Azure Container Registry (ACR) vs AWS Elastic Container Registry (ECR) vs Google Artifact Registry vs JFrog Artifactory vs GitLab Container Registry vs Oracle Container Registry vs Mirantis Secure Registry vs Harbor vs Cloudsmith vs Gitea vs GitHub Container Registry vs Docker Hub."
-authors: [ jpage ]
-tags: [ "OCI Registry", "Docker Registry", "Container Compliance", "Distr" ]
+title: 'Choosing the Right Container Registry'
+description: 'OCI container image registry comparison: Comparing Azure Container Registry (ACR) vs AWS Elastic Container Registry (ECR) vs Google Artifact Registry vs JFrog Artifactory vs GitLab Container Registry vs Oracle Container Registry vs Mirantis Secure Registry vs Harbor vs Cloudsmith vs Gitea vs GitHub Container Registry vs Docker Hub.'
+authors: [jpage]
+tags: ['OCI Registry', 'Docker Registry', 'Container Compliance', 'Distr']
 image: '/img/blog/2025-04-07-registry-comparison/thumbnail.png'
 ---
 
@@ -24,21 +24,20 @@ But first, let's define a few key terms.
 
 ## Terminology
 
--   **Registry**: A service for storing and distributing container artifacts.
-Examples include private Docker image registries, OCI registries, and many proprietary registries which will be covered below.
--   **Artifact**: Can have multiple meanings, but in this context it refers to an OCI-compliant image.
--   **Container Image**: A type of artifact. It consists of manifests and blobs.
--   **Digest**: A unique identifier for a specific version of an artifact, typically a SHA256 hash. The digest cannot change.
--   **Tag**: A human-readable label for a specific version of an artifact, often used for versioning (e.g., `latest`, `v1.0`, etc.).
-It points to a unique digest.
-If tags in a registry are immutable, it is not possible to change the pointer to another digest.
--   **Manifest**: Metadata that defines how blobs are combined to form a container image.
-It can also reference other manifests in the case of a multi-arch image.
--   **Blob**: The actual data of an artifact, most commonly an archive of files.
--   **SBOM (Software Bill of Materials)**: A list of components and dependencies used in a software build. It is most common to directly add it as a layer to the OCI image.
--   **Image Signing**: A cryptographic process that ensures the integrity and authenticity of container images. The signature can also be directly integrated into the OCI image.
--   **OCI Compliance**: Adherence to the Open Container Initiative standards, ensuring OCI-compliant containers can be used across different platforms.
-
+- **Registry**: A service for storing and distributing container artifacts.
+  Examples include private Docker image registries, OCI registries, and many proprietary registries which will be covered below.
+- **Artifact**: Can have multiple meanings, but in this context it refers to an OCI-compliant image.
+- **Container Image**: A type of artifact. It consists of manifests and blobs.
+- **Digest**: A unique identifier for a specific version of an artifact, typically a SHA256 hash. The digest cannot change.
+- **Tag**: A human-readable label for a specific version of an artifact, often used for versioning (e.g., `latest`, `v1.0`, etc.).
+  It points to a unique digest.
+  If tags in a registry are immutable, it is not possible to change the pointer to another digest.
+- **Manifest**: Metadata that defines how blobs are combined to form a container image.
+  It can also reference other manifests in the case of a multi-arch image.
+- **Blob**: The actual data of an artifact, most commonly an archive of files.
+- **SBOM (Software Bill of Materials)**: A list of components and dependencies used in a software build. It is most common to directly add it as a layer to the OCI image.
+- **Image Signing**: A cryptographic process that ensures the integrity and authenticity of container images. The signature can also be directly integrated into the OCI image.
+- **OCI Compliance**: Adherence to the Open Container Initiative standards, ensuring OCI-compliant containers can be used across different platforms.
 
 ## What Is a Container Registry?
 
@@ -46,9 +45,8 @@ A container registry is used by software developers as a service to store, manag
 It provides APIs for pushing and pulling artifacts and is mostly consumed by CLI clients in CI/CD environments or deployment targets.
 Mature container registries come with advanced access control, analytics, and user interfaces.
 
-
-
 ## Understanding the OCI Format
+
 Based on the original Docker runtime and image format, the Open Container Initiative (OCI) stepped in to standardize these into open, vendor-neutral specifications: the OCI Image, Distribution, and Runtime specs.
 This brought consistency and portability to container images, and now, the same is happening for other types of software artifacts.
 
@@ -62,6 +60,7 @@ For example, you can push a machine learning model like this:
 ```bash
 oras push registry.distr.sh/my-org/ml-model:0.0.1 ./model.pkl:application/vnd.myorg.model
 ```
+
 This command will wrap my `model.pkl` file in an OCI-compliant format of my custom type `application/vnd.myorg.model`, generating the necessary manifest and digest, and then push it to the specified registry.
 
 ## Key Considerations When Choosing a Registry
@@ -87,7 +86,6 @@ Can the registry be deployed where you need it—cloud, on-prem, or air-gapped e
 **Support**
 Does the registry have a strong support community or a commercial vendor backing?
 
-
 ## List of private (internal) container registries
 
 Internal registries are for the most part built for trusted, in-house use.
@@ -98,6 +96,7 @@ They're ideal when dev and deploy happen inside the same security boundary, with
 But they often come with limited user interfaces, access control options, and analytics.
 
 ### Azure Container Registry (ACR)
+
 ![ACR](/img/blog/2025-04-07-registry-comparison/acr.png)
 
 [Azure Container Registry (ACR)](https://azure.microsoft.com/en-us/products/container-registry) allows users to store artifacts either in a default global namespace or organize them more granularly using the supported repository structure.
@@ -106,12 +105,11 @@ There's also support for vulnerability scanning, apparently via an integration w
 
 **Key features:**
 
--   OCI v1.1 compliant, strong integration with Azure
--   Supports specialized artifacts (WASM modules, Bicep files, ML models)
--   Built-in Azure policy management and security
--   Pricing transparency
--   Automated container building and patching
-
+- OCI v1.1 compliant, strong integration with Azure
+- Supports specialized artifacts (WASM modules, Bicep files, ML models)
+- Built-in Azure policy management and security
+- Pricing transparency
+- Automated container building and patching
 
 ### AWS Elastic Container Registry (ECR)
 
@@ -128,7 +126,6 @@ It's ideal for AWS-centric workflows, offering high availability and durability 
 - Automated vulnerability scanning
 - Built-in lifecycle policy management
 - Powerful, but complicated access control via AWS IAM
-
 
 ### Google Artifacts Registry (GCR)
 
@@ -158,34 +155,32 @@ Best suited for Oracle Cloud users, it works seamlessly with tools like Kubernet
 - Private and Public Docker Registries
 - Multi-Architecture Image Support
 
-
 ### JFrog Artifactory
 
 ![jfrog](/img/blog/2025-04-07-registry-comparison/jfrog.png)
 
 [JFrog Artifactory](https://jfrog.com/artifactory/) is without a doubt a huge player in the registry product catalog, being both a registry and a universal repository manager, supporting 30+ package formats.
 
-
 Instead of a unified registry space, each format typically gets its own dedicated repository of a specific type.
 JFrog Artifactory pricing varies based on scale and features, but it offers one of the most comprehensive solutions for internal registries on the market.
 
 It supports three repo types:
 
--   **Local** – for internal artifacts
--   **Remote** – for caching external sources
--   **Virtual** – unified views of local and remote repos
+- **Local** – for internal artifacts
+- **Remote** – for caching external sources
+- **Virtual** – unified views of local and remote repos
 
 Artifactory includes enterprise-grade features like OCI v1.1 compliance, a proprietary query language (AQL), CDN integration, and fine-grained access controls for large-scale distribution.
 
 **Key features:**
 
--   Artifactory can be deployed on-prem or in the cloud
--   Full OCI-compliant registry with Referrers API support
--   Universal artifact management across multiple formats
--   Advanced artifact tracking, dependency management, and caching
--   Image vulnerability scanning and security features
--   Proprietary query language
--   Artifactory cloud + CDN Distribution
+- Artifactory can be deployed on-prem or in the cloud
+- Full OCI-compliant registry with Referrers API support
+- Universal artifact management across multiple formats
+- Advanced artifact tracking, dependency management, and caching
+- Image vulnerability scanning and security features
+- Proprietary query language
+- Artifactory cloud + CDN Distribution
 
 ### GitLab Container Registry
 
@@ -199,10 +194,10 @@ Key features:
 
 - It can also be self-hosted.
 - Tight integration with GitLab CI/CD for build, test, and deployment
--   Webhook support for automation and external integrations
--   Built-in image and repository management via the GitLab UI
--   Ideal for teams already using GitLab for version control
--   OCI compliance in progress
+- Webhook support for automation and external integrations
+- Built-in image and repository management via the GitLab UI
+- Ideal for teams already using GitLab for version control
+- OCI compliance in progress
 
 ### Cloudsmith
 
@@ -212,11 +207,11 @@ Key features:
 
 **Key Features:**
 
--   OCI v1.1 compliance
--   Unified policy engine across artifact types
--   ML model tracking support
--   Scalable, cloud-hosted (SaaS) solution
--   Ideal for complex, multi-format distribution scenarios
+- OCI v1.1 compliance
+- Unified policy engine across artifact types
+- ML model tracking support
+- Scalable, cloud-hosted (SaaS) solution
+- Ideal for complex, multi-format distribution scenarios
 
 ### Mirantis
 
@@ -227,19 +222,18 @@ Unlike public registries, MSR offers a secure environment for storing, sharing, 
 
 **Key Features:**
 
--   Role-Based Access Control (RBAC)
--   Image Scanning
--   Image Signing
--   Caching and Mirroring
--   Image Lifecycle Management
--   High Availability (HA) Configurations
--   Exportable Health Metrics
+- Role-Based Access Control (RBAC)
+- Image Scanning
+- Image Signing
+- Caching and Mirroring
+- Image Lifecycle Management
+- High Availability (HA) Configurations
+- Exportable Health Metrics
 
 > Recent announcement: Mirantis has moved the open-source core of its Mirantis Secure Registry (MSR) to CNCF Harbor.
 > Instead of continuing to develop their own registry independently, Mirantis now uses Harbor as the foundation of MSR.
 
 ### Harbor
-
 
 [Harbor](https://goharbor.io/) is an open source container registry that is quite robust in the feature set that it offers. It allows administrators to organize repositories into projects, which can be either public or private, with access controlled through role-based access control (RBAC).
 
@@ -249,10 +243,10 @@ Harbor supports full OCI v2.0 compliance and extends beyond basic container mana
 
 **Key Features:**
 
--   Full OCI v2.0 Compliance
--   Extensive Artifact Support: Includes support for CNABs, OPA bundles, and user-defined OCI artifacts like ML models.
--   Enterprise Security Features: Offers vulnerability scanning, image replication, and advanced access control.
--   Supply Chain Security Tools: Provides features like auto-generated SBOMs for enhanced security.
+- Full OCI v2.0 Compliance
+- Extensive Artifact Support: Includes support for CNABs, OPA bundles, and user-defined OCI artifacts like ML models.
+- Enterprise Security Features: Offers vulnerability scanning, image replication, and advanced access control.
+- Supply Chain Security Tools: Provides features like auto-generated SBOMs for enhanced security.
 
 ### Gitea
 
@@ -262,11 +256,10 @@ Harbor supports full OCI v2.0 compliance and extends beyond basic container mana
 
 **Key Features:**
 
--   Basic OCI Compliance: Supports publishing of OCI-compliant images.
--   Integration with Gitea Code Hosting
--   Lightweight and Easy to Use
--   Personal Access Token Authentication
-
+- Basic OCI Compliance: Supports publishing of OCI-compliant images.
+- Integration with Gitea Code Hosting
+- Lightweight and Easy to Use
+- Personal Access Token Authentication
 
 ### GitHub Container Registry
 
@@ -278,12 +271,11 @@ It is best used for open source images
 
 **Key Features:**
 
--   Full OCI support for container images
--   Integrated with GitHub Actions for automated image builds and publishing
--   Fine-grained permission management tied to GitHub repos and orgs
--   Namespace-scoped images using GitHub user/org paths
--   Supports Helm charts and other OCI artifacts
-
+- Full OCI support for container images
+- Integrated with GitHub Actions for automated image builds and publishing
+- Fine-grained permission management tied to GitHub repos and orgs
+- Namespace-scoped images using GitHub user/org paths
+- Supports Helm charts and other OCI artifacts
 
 ### Docker Hub
 
@@ -295,11 +287,11 @@ While it's a convenient starting point for development, its rate limits and secu
 
 **Key Features:**
 
--   Native integration with Docker CLI and Docker Desktop
--   Public and private repositories
--   Automated builds and webhooks for CI integration
--   Official and Verified Publisher image libraries
--   Rate-limited anonymous access (login recommended for better limits)
+- Native integration with Docker CLI and Docker Desktop
+- Public and private repositories
+- Automated builds and webhooks for CI integration
+- Official and Verified Publisher image libraries
+- Rate-limited anonymous access (login recommended for better limits)
 
 ## List of container registries that support external users
 
@@ -330,48 +322,46 @@ It also comes with a [customer portal](https://distr.sh/docs/product/customer-po
 
 - Offers a vendor and customer portal
 - Supports OCI-formatted and OCI-compliant artifacts (Helm, Docker, etc)
--   Built specifically for commercial self-managed deployment options for software and AI companies.
--   Advanced features: artifact tag restrictions, usage tracking, and granular access controls
--   It can be consumed as a managed service (SaaS).
-(Sign up at [signup.distr.sh](https://signup.distr.sh/)) or [self-managed](https://distr.sh/docs/self-hosting/getting-started/).
--  Open Source and free to use
+- Built specifically for commercial self-managed deployment options for software and AI companies.
+- Advanced features: artifact tag restrictions, usage tracking, and granular access controls
+- It can be consumed as a managed service (SaaS).
+  (Sign up at [signup.distr.sh](https://signup.distr.sh/)) or [self-managed](https://distr.sh/docs/self-hosting/getting-started/).
+- Open Source and free to use
 
 **Who it's for:**
 
 Built for Independent Software Vendors (ISVs), B2B platforms, and enterprise software teams who need to distribute commercial software to customer environments, especially air-gapped, self-managed, or regulated deployments.
 
-
-
 ## Comparison Table
 
 | **Registry**          | **Managed service** | **Can be self-managed** | **Great support for external users** |
-|-----------------------|---------------------|-------------------------|--------------------------------------|
-| **Gitea**             | ❌️                  | ✅️                      | ❌️                                   |
-| **Harbor**            | ❌️                  | ✅️                      | ❌️                                   |
-| **Docker Hub**        | ✅️                  | ❌️                      | ❌️                                   |
-| **GitLab CR**         | ✅️                  | ✅️                      | ❌️                                   |
-| **GitHub CR**         | ✅️                  | ❌️                      | ❌️                                   |
-| **JFrog Artifactory** | ❌️                  | ✅️                      | ✅️                                   |
-| **Azure CR**          | ✅️                  | ❌️                      | ❌️                                   |
-| **AWS ECR**           | ✅️                  | ❌️                      | ❌️                                   |
-| **Google CR**         | ✅️                  | ❌️                      | ❌️                                   |
-| **Oracle CR**         | ✅️                  | ❌️                      | ❌️                                   |
-| **Cloudsmith**        | ✅️                  | ❌️                      | ❌️                                   |
-| **Distr**             | ✅️                  | ✅️                      | ✅️                                   |
+| --------------------- | ------------------- | ----------------------- | ------------------------------------ |
+| **Gitea**             | ❌️                 | ✅️                     | ❌️                                  |
+| **Harbor**            | ❌️                 | ✅️                     | ❌️                                  |
+| **Docker Hub**        | ✅️                 | ❌️                     | ❌️                                  |
+| **GitLab CR**         | ✅️                 | ✅️                     | ❌️                                  |
+| **GitHub CR**         | ✅️                 | ❌️                     | ❌️                                  |
+| **JFrog Artifactory** | ❌️                 | ✅️                     | ✅️                                  |
+| **Azure CR**          | ✅️                 | ❌️                     | ❌️                                  |
+| **AWS ECR**           | ✅️                 | ❌️                     | ❌️                                  |
+| **Google CR**         | ✅️                 | ❌️                     | ❌️                                  |
+| **Oracle CR**         | ✅️                 | ❌️                     | ❌️                                  |
+| **Cloudsmith**        | ✅️                 | ❌️                     | ❌️                                  |
+| **Distr**             | ✅️                 | ✅️                     | ✅️                                  |
 
 ## Conclusion: Which container registry fits your needs best?
 
 - **For enterprises that use artifacts internally**:
-Choose **JFrog Artifactory** or **Harbor** for large organizations managing complex internal workflows.
-Both offer robust access controls, multi-format support, and policy enforcement for secure, large-scale internal use.
+  Choose **JFrog Artifactory** or **Harbor** for large organizations managing complex internal workflows.
+  Both offer robust access controls, multi-format support, and policy enforcement for secure, large-scale internal use.
 
 - **SaaS vendors that only host at one cloud provider without self-managed support**:
-If your infrastructure runs in a specific cloud, consider the container registry your cloud provider offers.
+  If your infrastructure runs in a specific cloud, consider the container registry your cloud provider offers.
 
 - **Non-commercial open source projects**:
-**GitHub Container Registry** and **Docker Hub** are ideal for distributing public artifacts to a wide audience with minimal setup.
-They're straightforward to adopt, work well with standard dev tooling, and are commonly known.
+  **GitHub Container Registry** and **Docker Hub** are ideal for distributing public artifacts to a wide audience with minimal setup.
+  They're straightforward to adopt, work well with standard dev tooling, and are commonly known.
 
 - **Commercial open source projects and SaaS vendors that want to offer self-managed deployment options**:
-**[Distr](https://distr.sh)** is built for software vendors distributing artifacts to external customer environments, including regulated, self-managed, or air-gapped deployments.
-It offers granular access controls, usage tracking, and flexible deployment models that internal or public registries can't deliver.
+  **[Distr](https://distr.sh)** is built for software vendors distributing artifacts to external customer environments, including regulated, self-managed, or air-gapped deployments.
+  It offers granular access controls, usage tracking, and flexible deployment models that internal or public registries can't deliver.
