@@ -158,11 +158,7 @@ const config: Config = {
     },
     announcementBar: {
       id: 'announcementBar-1', // Increment on change
-      content: `🎉 <a href="https://distr.sh/docs/getting-started/what-is-distr/" target="_blank">Distr</a> Launch Week is happening between May 19. and May 23. Stay tuned ⭐`,
-      // content: `🎉 <a href="https://distr.sh/docs/getting-started/what-is-distr/"
-      // target="_blank">Distr</a> Launch Week is happening between May 19.
-      // and May 23.
-      // <a href="/blog/tags/distr-launch-week/">Read more</a> ⭐`,
+      content: `🎉 <a href="https://distr.sh/docs/getting-started/what-is-distr/" target="_blank">Distr</a> Launch Week is happening between May 19. and May 23. <a href="/blog/tags/distr-launch-week/">Read more</a> ⭐`,
       isCloseable: false,
     },
     image:
