@@ -89,6 +89,16 @@ const config: Config = {
     [
       '@docusaurus/plugin-client-redirects',
       {
+        redirects: [
+          {
+            to: 'https://github.com/glasskube/packages/tree/main/packages',
+            from: '/packages',
+          },
+          {
+            to: '/contact',
+            from: '/building-blocks-whitepaper-cta',
+          },
+        ],
         createRedirects(existingPath) {
           if (existingPath.includes('/products/package-manager')) {
             return [
@@ -209,7 +219,7 @@ const config: Config = {
         {
           title: 'Community',
           items: [
-            {label: 'Discord', href: 'https://discord.gg/SxH6KUCGH7'},
+            {label: 'Discord', href: 'https://discord.com/invite/SxH6KUCGH7'},
             {
               label: 'LinkedIn',
               href: 'https://www.linkedin.com/company/glasskube/',
