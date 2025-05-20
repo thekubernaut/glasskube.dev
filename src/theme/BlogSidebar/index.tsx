@@ -16,8 +16,9 @@ export default function BlogSidebar(): JSX.Element {
           rel="noreferrer">
           Distr
         </Link>{' '}
-        is our Open Source control plane for self-managed, BYOC, and on-prem deployments. 
-         Everything you need to distribute applications to self-managed customers out of the box.
+        is our Open Source control plane for self-managed, BYOC, and on-prem
+        deployments. Everything you need to distribute applications to
+        self-managed customers out of the box.
       </p>
       <div className={styles.buttons}>
         <DemoButton additionalClassNames="" />
